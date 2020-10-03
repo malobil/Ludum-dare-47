@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractableElement : MonoBehaviour
+public interface InteractableElement
 {
-    public virtual void Interact()
-    {
-        Debug.LogFormat("Interact with me {0}", gameObject.name);
-    }
+    void Interact() ;
 }

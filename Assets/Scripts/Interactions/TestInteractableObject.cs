@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestInteractableObject : InteractableElement
+public class TestInteractableObject : MonoBehaviour, InteractableElement
 {
-    
+    public void Interact()
+    {
+        Debug.Log("ddd");
+    }
 }
