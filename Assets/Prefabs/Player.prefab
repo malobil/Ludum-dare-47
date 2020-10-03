@@ -124,7 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_goldenNugget: {fileID: 3350502519294267695, guid: d585b4bd33ad7b644a5d6f1b07edcef2, type: 3}
   m_nuggetSpeed: 15
-  m_nuggetCooldDown: 1
+  m_nuggetCooldDown: 0.5
+  m_nuggetLifeTime: 5
   m_playerCamera: {fileID: 2742675141226600407}
   m_shotPoint: {fileID: 1653747166898711036}
 --- !u!1 &2742675141078642964
