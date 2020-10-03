@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public delegate void Test() ;
     public Test testing;
 
+    private string m_currentLoadLevel;
+    private int m_currentLevelIdx;
+
     private void Awake()
     {
         if(Instance == null)
@@ -20,6 +23,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        m_currentLevelIdx = 1;
     }
 
     private void Update()
@@ -27,14 +32,42 @@ public class GameManager : MonoBehaviour
         testing?.Invoke() ;
     }
 
-    [SerializeField] private string m_firstLevelName;
-
     public void QuitGame()
     {
         Application.Quit();
     }
-    public void StartGame()
+    public void LoadLevel(string levelToLoad)
     {
-        SceneManager.LoadScene(m_firstLevelName);
+        SceneManager.LoadScene(levelToLoad + m_currentLevelIdx);
+        m_currentLoadLevel = levelToLoad;
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(m_currentLoadLevel);
+    }
+
+    public void ResumeGame()
+    {
+        UiManager.Instance.ShowPauseMenu(false);
+    }
+
+    public void NextLevel()
+    {
+        if(SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Scene_10"))
+        {
+            m_currentLevelIdx++;
+            LoadLevel(m_currentLoadLevel);
+        }
+        else
+        {
+            RestartGame();
+        }
+    }
+
+    public void RestartGame()
+    {
+        m_currentLevelIdx = 1;
+        SceneManager.LoadScene("MainMenu");
     }
 }

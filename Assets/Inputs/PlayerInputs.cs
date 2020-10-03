@@ -41,6 +41,22 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""aa5412da-ec12-40ba-9e9f-e89105a4e64b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""RestartLevel"",
+                    ""type"": ""Button"",
+                    ""id"": ""92651cd8-fb54-4d3a-bf9b-b8e1eb5195ed"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -186,6 +202,28 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""Interaction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99383696-0223-49a6-a333-f21d29124f24"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""678e57d4-340b-46c0-be93-7d8d478df432"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RestartLevel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -197,6 +235,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_ClassicPlayer_MouseDelta = m_ClassicPlayer.FindAction("MouseDelta", throwIfNotFound: true);
         m_ClassicPlayer_Movement = m_ClassicPlayer.FindAction("Movement", throwIfNotFound: true);
         m_ClassicPlayer_Interaction = m_ClassicPlayer.FindAction("Interaction", throwIfNotFound: true);
+        m_ClassicPlayer_Pause = m_ClassicPlayer.FindAction("Pause", throwIfNotFound: true);
+        m_ClassicPlayer_RestartLevel = m_ClassicPlayer.FindAction("RestartLevel", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,6 +289,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_ClassicPlayer_MouseDelta;
     private readonly InputAction m_ClassicPlayer_Movement;
     private readonly InputAction m_ClassicPlayer_Interaction;
+    private readonly InputAction m_ClassicPlayer_Pause;
+    private readonly InputAction m_ClassicPlayer_RestartLevel;
     public struct ClassicPlayerActions
     {
         private @PlayerInputs m_Wrapper;
@@ -256,6 +298,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @MouseDelta => m_Wrapper.m_ClassicPlayer_MouseDelta;
         public InputAction @Movement => m_Wrapper.m_ClassicPlayer_Movement;
         public InputAction @Interaction => m_Wrapper.m_ClassicPlayer_Interaction;
+        public InputAction @Pause => m_Wrapper.m_ClassicPlayer_Pause;
+        public InputAction @RestartLevel => m_Wrapper.m_ClassicPlayer_RestartLevel;
         public InputActionMap Get() { return m_Wrapper.m_ClassicPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -274,6 +318,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Interaction.started -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnInteraction;
                 @Interaction.performed -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnInteraction;
                 @Interaction.canceled -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnInteraction;
+                @Pause.started -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnPause;
+                @RestartLevel.started -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnRestartLevel;
+                @RestartLevel.performed -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnRestartLevel;
+                @RestartLevel.canceled -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnRestartLevel;
             }
             m_Wrapper.m_ClassicPlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -287,6 +337,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @Interaction.started += instance.OnInteraction;
                 @Interaction.performed += instance.OnInteraction;
                 @Interaction.canceled += instance.OnInteraction;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
+                @RestartLevel.started += instance.OnRestartLevel;
+                @RestartLevel.performed += instance.OnRestartLevel;
+                @RestartLevel.canceled += instance.OnRestartLevel;
             }
         }
     }
@@ -296,5 +352,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnMouseDelta(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnInteraction(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
+        void OnRestartLevel(InputAction.CallbackContext context);
     }
 }

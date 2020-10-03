@@ -15,6 +15,7 @@ public class PlayerInteraction : MonoBehaviour
     {
         m_playerInput = GetComponent<PlayerInputManager>().GetPlayerInput() ;
         m_playerInput.ClassicPlayer.Interaction.performed += ctx => Interact();
+        m_playerInput.ClassicPlayer.Pause.performed += ctx => Interact();
     }
 
     // Update is called once per frame
@@ -36,5 +37,20 @@ public class PlayerInteraction : MonoBehaviour
                 touchedInteractElement.Interact();
             }
         }
+    }
+
+    private void Pause()
+    {
+        if (!UiManager.Instance.PauseMenuState())
+        {
+            UiManager.Instance.ShowPauseMenu(true);
+        }
+        else
+            UiManager.Instance.ShowPauseMenu(false);
+    }
+
+    private void Restart()
+    {
+        GameManager.Instance.RestartLevel();
     }
 }

@@ -23,4 +23,9 @@ public class UiManager : MonoBehaviour
     {
         m_pauseMenu.SetActive(value);
     }
+
+    public bool PauseMenuState()
+    {
+        return m_pauseMenu.active;
+    }
 }
