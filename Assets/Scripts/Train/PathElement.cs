@@ -1,14 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+
+public enum PathElementType { Straight, Turning}
 
 public class PathElement : MonoBehaviour
 {
     [SerializeField] private Transform[] pathPoint;
     [SerializeField] private RailDetector m_exitRailDetector ;
 
-    public PathElement m_nextPathElement;
-    public int m_pathID = -1;
+    [SerializeField] private PathElement m_nextPathElement;
+    [SerializeField] private int m_pathID = -1;
+
+    [SerializeField] private PathElementType m_railType = PathElementType.Straight;
 
     public Transform[] GetPathPoints()
     {
@@ -39,11 +44,18 @@ public class PathElement : MonoBehaviour
             int nextID = newID + 1;
             m_nextPathElement.SetPathID(nextID) ;
         }
+
+        PrefabUtility.RecordPrefabInstancePropertyModifications(this);
     }
 
     public int GetPathID()
     {
         return m_pathID;
+    }
+
+    public PathElementType GetPathType()
+    {
+        return m_railType;
     }
 }
 

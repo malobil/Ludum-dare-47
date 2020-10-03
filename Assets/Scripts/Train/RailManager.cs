@@ -68,4 +68,26 @@ public class RailManager : MonoBehaviour
     {
         return m_rails[m_currentPathElementIdx].GetPathPoints()[m_currentPointIdx].transform ;
     }
+
+    public void AddIndex()
+    {
+        if (m_currentPointIdx < m_rails[m_currentPathElementIdx].GetPathPoints().Length - 1)
+        {
+            m_currentPointIdx++;
+        }
+        else
+        {
+            m_currentPointIdx = 0;
+
+            if(m_currentPathElementIdx < m_rails.Count - 1)
+            {
+                m_currentPathElementIdx++;
+            }
+            else
+            {
+                m_currentPathElementIdx = 0;
+            }
+        }
+      
+    }
 }
