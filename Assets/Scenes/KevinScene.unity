@@ -663,25 +663,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3526e5b1019fd074a816781edb3b4365, type: 3}
---- !u!1 &892675180 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2634101258196255029, guid: 89086758bd2134d48afa9ce5c146c70e, type: 3}
-  m_PrefabInstance: {fileID: 6789333131423693615}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &892675181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892675180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 989eab3e0748e2142be924c872cf6319, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_speed: 1
-  m_distanceDectection: 0.25
 --- !u!1 &897564833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,6 +1748,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1655502048, guid: dfecfee42d6f6184fb55e402efb66fc7, type: 3}
+      propertyPath: m_interactionDistance
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2742675139517201480, guid: dfecfee42d6f6184fb55e402efb66fc7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1810,18 +1795,6 @@ PrefabInstance:
     - target: {fileID: 2742675139517201480, guid: dfecfee42d6f6184fb55e402efb66fc7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2742675139517201480, guid: dfecfee42d6f6184fb55e402efb66fc7, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2742675139517201480, guid: dfecfee42d6f6184fb55e402efb66fc7, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2742675139517201480, guid: dfecfee42d6f6184fb55e402efb66fc7, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2742675139517201481, guid: dfecfee42d6f6184fb55e402efb66fc7, type: 3}
       propertyPath: m_Name
@@ -1884,6 +1857,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrefabWagonTest
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6789333130485520293, guid: 89086758bd2134d48afa9ce5c146c70e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89086758bd2134d48afa9ce5c146c70e, type: 3}
