@@ -29,7 +29,12 @@ public class PlayerInteraction : MonoBehaviour
 
         if(Physics.Raycast(m_camera.position,m_camera.forward,out hit,m_interactionDistance))
         {
-            Debug.Log("HIT");
+            InteractableElement touchedInteractElement = hit.transform.gameObject.GetComponent<InteractableElement>();
+           
+            if (touchedInteractElement != null)
+            {
+                touchedInteractElement.Interact();
+            }
         }
     }
 }
