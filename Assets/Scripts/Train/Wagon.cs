@@ -4,12 +4,26 @@ using UnityEngine;
 
 public class Wagon : MonoBehaviour
 {
+    public static Wagon Instance { get; private set; }
+
     [SerializeField] private float m_speed = 1.2f;
     [SerializeField] private float m_distanceDectection = 0.25f;
     private Rigidbody m_rbComp;
     private bool m_canMove = true;
 
     private Transform m_targetPoint;
+
+    private void Awake()
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -49,13 +63,18 @@ public class Wagon : MonoBehaviour
         RailManager.Instance.AddIndex();
     }
 
-    void StopWagon()
+    public void StopWagon()
     {
         m_canMove = false;
     }
 
-    void StartWagon()
+    public void StartWagon()
     {
         m_canMove = true ;
+    }
+
+    public void ToggleWagon()
+    {
+        m_canMove = !m_canMove;
     }
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : MonoBehaviour, InteractableElementOnShot
+public class Button : InteractableObject
 {
-    public void InteractOnShot()
+    public override void Interact()
     {
-        Debug.Log("InteractOnShot");
+        base.Interact();
     }
 }
