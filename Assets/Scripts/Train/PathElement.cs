@@ -5,22 +5,45 @@ using UnityEngine;
 public class PathElement : MonoBehaviour
 {
     [SerializeField] private Transform[] pathPoint;
+    [SerializeField] private RailDetector m_exitRailDetector ;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public PathElement m_nextPathElement;
+    public int m_pathID = -1;
 
     public Transform[] GetPathPoints()
     {
         return pathPoint;
+    }
+
+    public PathElement GetNextPoint()
+    {
+        return m_nextPathElement;
+    }
+
+    public void SetNextPathElement()
+    {
+        m_nextPathElement =  m_exitRailDetector.CheckNearestPath();
+    }
+
+    public void ResetPathID()
+    {
+        m_pathID = -1;
+    }
+
+    public void SetPathID(int newID)
+    {
+        m_pathID = newID;
+        
+        if(m_nextPathElement != null)
+        {
+            int nextID = newID + 1;
+            m_nextPathElement.SetPathID(nextID) ;
+        }
+    }
+
+    public int GetPathID()
+    {
+        return m_pathID;
     }
 }
 

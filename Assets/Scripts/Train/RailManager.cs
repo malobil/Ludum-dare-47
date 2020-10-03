@@ -1,33 +1,57 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class RailManager : MonoBehaviour
 {
-    private List<PathElement> m_rails = new List<PathElement>();
+    public static RailManager Instance { get ; private set; }
+    [SerializeField] private List<PathElement> m_rails = new List<PathElement>() ;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        GetAllRails();
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RefreshPath()
     {
+        m_rails.Clear();
+        SetPath();
+    }
+
+    public void SetPath()
+    {
+        foreach (Transform child in transform)
+        {
+            if (child.GetComponent<PathElement>())
+            {
+                m_rails.Add(child.GetComponent<PathElement>());
+            }
+        }
+
+        for(int i = 0; i < m_rails.Count; i++)
+        {
+            m_rails[i].ResetPathID();
+            m_rails[i].SetNextPathElement();
+        }
+
+        m_rails[0].SetPathID(0);
+
+        m_rails.RemoveAll(x => x.GetPathID() == -1);
+
+        m_rails.Sort((a, b) => (a.GetPathID()).CompareTo(b.GetPathID()));
         
     }
 
-    private void GetAllRails()
+    public List<PathElement> GetRail()
     {
-        foreach(Transform child in transform)
-        {
-            PathElement rail = child.GetComponent<PathElement>();
-
-            if(rail != null)
-            {
-                m_rails.Add(rail);
-            }
-        }
+        return m_rails;
     }
 }
