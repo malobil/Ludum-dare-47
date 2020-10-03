@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class InteractableObject : MonoBehaviour, InteractableElement
+public class InteractableObject : MonoBehaviour
 {
     [SerializeField] private List<UnityEvent> m_interactEvent = new List<UnityEvent>() ;
     [SerializeField] private Animator m_animator = null;
     [SerializeField] private string m_triggerAnimationName = string.Empty;
+    [SerializeField] private bool m_interactOnShot = false;
+
     public virtual void Interact()
     {
         for(int i = 0; i < m_interactEvent.Count ; i++)
@@ -23,5 +25,10 @@ public class InteractableObject : MonoBehaviour, InteractableElement
     public void ToggleWagon()
     {
         Wagon.Instance.ToggleWagon();
+    }
+
+    public bool CheckOnShotInteraction()
+    {
+        return m_interactOnShot;
     }
 }

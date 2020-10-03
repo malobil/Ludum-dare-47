@@ -30,7 +30,7 @@ public class PlayerInteraction : MonoBehaviour
 
         if(Physics.Raycast(m_camera.position,m_camera.forward,out hit,m_interactionDistance))
         {
-            InteractableElement touchedInteractElement = hit.transform.gameObject.GetComponent<InteractableElement>();
+            InteractableObject touchedInteractElement = hit.transform.gameObject.GetComponent<InteractableObject>();
            
             if (touchedInteractElement != null)
             {

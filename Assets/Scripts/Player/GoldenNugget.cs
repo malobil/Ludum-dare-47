@@ -21,6 +21,14 @@ public class GoldenNugget : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        InteractableObject interactableObj = collision.transform.GetComponent<InteractableObject>();
         
+        if (interactableObj != null)
+        {
+            if(interactableObj.CheckOnShotInteraction())
+            {
+                interactableObj.Interact();
+            }
+        }
     }
 }
