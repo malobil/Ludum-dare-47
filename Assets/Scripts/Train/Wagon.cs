@@ -15,6 +15,7 @@ public class Wagon : MonoBehaviour
     void Start()
     {
         m_rbComp = GetComponent<Rigidbody>();
+        transform.position = RailManager.Instance.GetNextPoint().position;
         SetNextPoint();
     }
 
@@ -48,4 +49,13 @@ public class Wagon : MonoBehaviour
         RailManager.Instance.AddIndex();
     }
 
+    void StopWagon()
+    {
+        m_canMove = false;
+    }
+
+    void StartWagon()
+    {
+        m_canMove = true ;
+    }
 }

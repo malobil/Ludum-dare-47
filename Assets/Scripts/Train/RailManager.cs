@@ -79,9 +79,13 @@ public class RailManager : MonoBehaviour
         }
         else
         {
-            m_currentPointIdx = 0;
 
-            if(m_currentPathElementIdx < m_rails.Count - 1)
+            if(m_rails[m_currentPathElementIdx].GetNextPoint() == null)
+            {
+                return;
+            }
+
+            if (m_currentPathElementIdx < m_rails.Count - 1)
             {
                 m_currentPathElementIdx++;
             }
@@ -89,12 +93,20 @@ public class RailManager : MonoBehaviour
             {
                 m_currentPathElementIdx = 0;
             }
+
+            m_currentPointIdx = 0;
         }
       
     }
 
-    void InversePath()
+    Transform GetFirstPoint()
+    {
+        return m_rails[0].transform;
+    }
+
+    public void InversePath()
     {
         m_inversePath = !m_inversePath;
+        SetPath();
     }
 }
