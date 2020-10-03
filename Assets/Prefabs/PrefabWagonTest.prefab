@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1089656046736064257}
+  - component: {fileID: 892675181}
   m_Layer: 0
   m_Name: PrefabWagonTest
   m_TagString: Untagged
@@ -31,19 +32,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6789333130485520293
+--- !u!114 &892675181
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5068600440040561402}
+  m_GameObject: {fileID: 2634101258196255029}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 989eab3e0748e2142be924c872cf6319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 1
+  m_distanceDectection: 0.25
 --- !u!1001 &6789333130052908675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119,13 +121,9 @@ PrefabInstance:
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2838024257798965244, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
---- !u!1 &5068600440040561402 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1760845590794185849, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
-  m_PrefabInstance: {fileID: 6789333130052908675}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8496187879733071005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3157035837189798430, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
