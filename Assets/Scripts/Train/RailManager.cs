@@ -58,6 +58,8 @@ public class RailManager : MonoBehaviour
         m_rails.RemoveAll(x => x.GetPathID() == -1);
 
         m_rails.Sort((a, b) => (a.GetPathID()).CompareTo(b.GetPathID()));
+
+        Debug.Log(CheckLoop());
         
     }
 
@@ -108,5 +110,15 @@ public class RailManager : MonoBehaviour
     {
         m_inversePath = !m_inversePath;
         SetPath();
+    }
+
+    public bool CheckLoop()
+    {
+        if (m_rails[m_rails.Count - 1].GetNextPoint() != null)
+        {
+            return true;
+        }
+
+        return false;
     }
 }
