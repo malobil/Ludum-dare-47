@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7229491097110891854}
   - component: {fileID: 4973576182247609179}
   - component: {fileID: 25586476458444091}
+  - component: {fileID: 2838024257798965244}
   m_Layer: 0
   m_Name: prefabWagon
   m_TagString: Untagged
@@ -98,6 +99,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.8376769, y: 0.47107643, z: 0.46954405}
   m_Center: {x: 0, y: 0.11948058, z: 0.000000029802322}
+--- !u!114 &2838024257798965244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760845590794185849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 989eab3e0748e2142be924c872cf6319, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_speed: 1.2
+  m_distanceDectection: 0.25
 --- !u!1 &2153692614983975961
 GameObject:
   m_ObjectHideFlags: 0
