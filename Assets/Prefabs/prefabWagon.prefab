@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 1998766418125431617}
   - component: {fileID: 1998766418125431618}
   - component: {fileID: 1998766418125431619}
-  - component: {fileID: 1998766418125431616}
+  - component: {fileID: 7288496176036846092}
   m_Layer: 0
   m_Name: prefabWagon
   m_TagString: Untagged
@@ -415,8 +415,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1998766418125431616
-BoxCollider:
+--- !u!64 &7288496176036846092
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -425,9 +425,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.8376769, y: 0.47107643, z: 0.46954405}
-  m_Center: {x: 0, y: 0.11948058, z: 0.000000029802322}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1434604654925876401, guid: 9c01e6b8fcb54274ab1192bd73651fad, type: 3}
 --- !u!1 &1998766419311038646
 GameObject:
   m_ObjectHideFlags: 0
