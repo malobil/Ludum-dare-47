@@ -9,6 +9,7 @@ public class PathElement : MonoBehaviour
 {
     [SerializeField] private Transform[] pathPoint;
     [SerializeField] private RailDetector m_exitRailDetector ;
+    [SerializeField] private RailDetector m_enterRailDetector ;
 
     [SerializeField] private PathElement m_nextPathElement;
     [SerializeField] private int m_pathID = -1;
@@ -25,9 +26,17 @@ public class PathElement : MonoBehaviour
         return m_nextPathElement;
     }
 
-    public void SetNextPathElement()
+    public void SetNextPathElement(bool isInverse)
     {
-        m_nextPathElement =  m_exitRailDetector.CheckNearestPath();
+        if(!isInverse)
+        {
+            m_nextPathElement = m_exitRailDetector.CheckNearestPath(isInverse);
+        }
+        else
+        {
+            m_nextPathElement = m_enterRailDetector.CheckNearestPath(isInverse);
+        }
+       
     }
 
     public void ResetPathID()

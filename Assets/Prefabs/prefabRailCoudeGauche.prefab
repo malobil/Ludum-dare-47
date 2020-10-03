@@ -61,6 +61,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   m_isEntryPoint: 0
+  m_noGo: 0
 --- !u!1 &1019318561427849208
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +123,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   m_isEntryPoint: 1
+  m_noGo: 0
 --- !u!1 &1748721360230273832
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +229,7 @@ GameObject:
   - component: {fileID: 2524108547468341334}
   - component: {fileID: 1278973775992158191}
   m_Layer: 0
-  m_Name: prefabRailCoude 1
+  m_Name: prefabRailCoudeGauche
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,5 +318,7 @@ MonoBehaviour:
   - {fileID: 2327395263393392959}
   - {fileID: 4210592303321385960}
   m_exitRailDetector: {fileID: 2874652351671959575}
+  m_enterRailDetector: {fileID: 5035113093116022967}
   m_nextPathElement: {fileID: 0}
   m_pathID: -1
+  m_railType: 0

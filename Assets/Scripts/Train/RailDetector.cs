@@ -10,7 +10,7 @@ public class RailDetector : MonoBehaviour
 
     private RailDetector m_detectedRail = null;
 
-    public PathElement CheckNearestPath()
+    public PathElement CheckNearestPath(bool inverse)
     {
        Collider[] detectedColliders = Physics.OverlapSphere(transform.position, 0.1f, m_detectorLayer);
 
@@ -20,9 +20,22 @@ public class RailDetector : MonoBehaviour
             {
                 m_detectedRail = detectedColliders[i].GetComponent<RailDetector>();
 
-                if (m_detectedRail.CheckEntryPoint() && !m_detectedRail.GetNoGo())
+                if(!m_detectedRail.GetNoGo())
                 {
-                    return m_detectedRail.GetParentPathElement();
+                    if (!inverse)
+                    {
+                        if (m_detectedRail.CheckEntryPoint() && !m_detectedRail.GetNoGo())
+                        {
+                            return m_detectedRail.GetParentPathElement();
+                        }
+                    }
+                    else
+                    {
+                        if (!m_detectedRail.CheckEntryPoint() && !m_detectedRail.GetNoGo())
+                        {
+                            return m_detectedRail.GetParentPathElement();
+                        }
+                    }
                 }
             }
         }

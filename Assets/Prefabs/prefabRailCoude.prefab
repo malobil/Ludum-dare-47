@@ -165,8 +165,10 @@ MonoBehaviour:
   - {fileID: 4233684904196761330}
   - {fileID: 7668796020821938665}
   m_exitRailDetector: {fileID: 8639838301862517270}
+  m_enterRailDetector: {fileID: 1576926808852073142}
   m_nextPathElement: {fileID: 0}
   m_pathID: -1
+  m_railType: 0
 --- !u!1 &5208055569505290537
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,6 +261,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   m_isEntryPoint: 0
+  m_noGo: 0
 --- !u!1 &6480176744769179570
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,3 +353,4 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   m_isEntryPoint: 1
+  m_noGo: 0

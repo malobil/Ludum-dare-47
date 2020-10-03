@@ -7,6 +7,8 @@ public class RailManager : MonoBehaviour
 {
     public static RailManager Instance { get ; private set; }
     [SerializeField] private List<PathElement> m_rails = new List<PathElement>() ;
+    [SerializeField] private bool m_inversePath = false;
+
 
     private int m_currentPathElementIdx = 0;
     private int m_currentPointIdx = 0 ;
@@ -48,7 +50,7 @@ public class RailManager : MonoBehaviour
         for(int i = 0; i < m_rails.Count; i++)
         {
             m_rails[i].ResetPathID();
-            m_rails[i].SetNextPathElement();
+            m_rails[i].SetNextPathElement(m_inversePath);
         }
 
         m_rails[0].SetPathID(0);
@@ -89,5 +91,10 @@ public class RailManager : MonoBehaviour
             }
         }
       
+    }
+
+    void InversePath()
+    {
+        m_inversePath = !m_inversePath;
     }
 }
