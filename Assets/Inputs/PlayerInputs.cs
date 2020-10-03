@@ -25,6 +25,22 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Movement"",
+                    ""type"": ""Value"",
+                    ""id"": ""e5aa9817-3708-4801-be4f-705ec28028f4"",
+                    ""expectedControlType"": ""Dpad"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interaction"",
+                    ""type"": ""Button"",
+                    ""id"": ""df747bd2-2bee-4b46-a76a-bc6797fcd0b7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -38,6 +54,138 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""MouseDelta"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5461dde9-c5ac-4b00-b286-16015a8bf1f9"",
+                    ""path"": ""<DualShockGamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseDelta"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""ZQSD"",
+                    ""id"": ""45a2b176-cce3-4280-af28-8074ce4afecd"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""d6f6de87-1e65-43d4-867e-fec149d95d49"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""e6a78fa0-3c81-4f62-bcfd-15abe44659b5"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""5dd0da35-4c8d-4d21-909e-8c633e633415"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""ea0f8465-86fe-4161-9b9e-19773c7d5db8"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""PS4"",
+                    ""id"": ""b2cd717d-5fa1-4663-b2be-29e32c4ba921"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""e5be2a2b-3b0f-4d4a-aa48-5e8974750674"",
+                    ""path"": ""<DualShockGamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""7d7a2386-07ab-4a77-bde1-56160b111e9b"",
+                    ""path"": ""<DualShockGamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""7d2d3448-48f2-40f2-b843-7415d8393ddb"",
+                    ""path"": ""<DualShockGamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""1bbb5cc6-c102-4eae-b49f-7c816d870348"",
+                    ""path"": ""<DualShockGamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Movement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a4596a3-7419-4356-89d8-6597047fcfd3"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interaction"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -47,6 +195,8 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         // ClassicPlayer
         m_ClassicPlayer = asset.FindActionMap("ClassicPlayer", throwIfNotFound: true);
         m_ClassicPlayer_MouseDelta = m_ClassicPlayer.FindAction("MouseDelta", throwIfNotFound: true);
+        m_ClassicPlayer_Movement = m_ClassicPlayer.FindAction("Movement", throwIfNotFound: true);
+        m_ClassicPlayer_Interaction = m_ClassicPlayer.FindAction("Interaction", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -97,11 +247,15 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputActionMap m_ClassicPlayer;
     private IClassicPlayerActions m_ClassicPlayerActionsCallbackInterface;
     private readonly InputAction m_ClassicPlayer_MouseDelta;
+    private readonly InputAction m_ClassicPlayer_Movement;
+    private readonly InputAction m_ClassicPlayer_Interaction;
     public struct ClassicPlayerActions
     {
         private @PlayerInputs m_Wrapper;
         public ClassicPlayerActions(@PlayerInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @MouseDelta => m_Wrapper.m_ClassicPlayer_MouseDelta;
+        public InputAction @Movement => m_Wrapper.m_ClassicPlayer_Movement;
+        public InputAction @Interaction => m_Wrapper.m_ClassicPlayer_Interaction;
         public InputActionMap Get() { return m_Wrapper.m_ClassicPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -114,6 +268,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @MouseDelta.started -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnMouseDelta;
                 @MouseDelta.performed -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnMouseDelta;
                 @MouseDelta.canceled -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnMouseDelta;
+                @Movement.started -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnMovement;
+                @Movement.performed -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnMovement;
+                @Movement.canceled -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnMovement;
+                @Interaction.started -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnInteraction;
+                @Interaction.performed -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnInteraction;
+                @Interaction.canceled -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnInteraction;
             }
             m_Wrapper.m_ClassicPlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -121,6 +281,12 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @MouseDelta.started += instance.OnMouseDelta;
                 @MouseDelta.performed += instance.OnMouseDelta;
                 @MouseDelta.canceled += instance.OnMouseDelta;
+                @Movement.started += instance.OnMovement;
+                @Movement.performed += instance.OnMovement;
+                @Movement.canceled += instance.OnMovement;
+                @Interaction.started += instance.OnInteraction;
+                @Interaction.performed += instance.OnInteraction;
+                @Interaction.canceled += instance.OnInteraction;
             }
         }
     }
@@ -128,5 +294,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     public interface IClassicPlayerActions
     {
         void OnMouseDelta(InputAction.CallbackContext context);
+        void OnMovement(InputAction.CallbackContext context);
+        void OnInteraction(InputAction.CallbackContext context);
     }
 }
