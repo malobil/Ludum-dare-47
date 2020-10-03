@@ -57,6 +57,14 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Shot"",
+                    ""type"": ""Button"",
+                    ""id"": ""4bd04950-d029-4afa-8399-eeaf3f7341c8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -224,6 +232,17 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                     ""action"": ""RestartLevel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cf97740b-0c97-4d4e-bd20-cde24f76f91f"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -237,6 +256,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         m_ClassicPlayer_Interaction = m_ClassicPlayer.FindAction("Interaction", throwIfNotFound: true);
         m_ClassicPlayer_Pause = m_ClassicPlayer.FindAction("Pause", throwIfNotFound: true);
         m_ClassicPlayer_RestartLevel = m_ClassicPlayer.FindAction("RestartLevel", throwIfNotFound: true);
+        m_ClassicPlayer_Shot = m_ClassicPlayer.FindAction("Shot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -291,6 +311,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
     private readonly InputAction m_ClassicPlayer_Interaction;
     private readonly InputAction m_ClassicPlayer_Pause;
     private readonly InputAction m_ClassicPlayer_RestartLevel;
+    private readonly InputAction m_ClassicPlayer_Shot;
     public struct ClassicPlayerActions
     {
         private @PlayerInputs m_Wrapper;
@@ -300,6 +321,7 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         public InputAction @Interaction => m_Wrapper.m_ClassicPlayer_Interaction;
         public InputAction @Pause => m_Wrapper.m_ClassicPlayer_Pause;
         public InputAction @RestartLevel => m_Wrapper.m_ClassicPlayer_RestartLevel;
+        public InputAction @Shot => m_Wrapper.m_ClassicPlayer_Shot;
         public InputActionMap Get() { return m_Wrapper.m_ClassicPlayer; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -324,6 +346,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @RestartLevel.started -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnRestartLevel;
                 @RestartLevel.performed -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnRestartLevel;
                 @RestartLevel.canceled -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnRestartLevel;
+                @Shot.started -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnShot;
+                @Shot.performed -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnShot;
+                @Shot.canceled -= m_Wrapper.m_ClassicPlayerActionsCallbackInterface.OnShot;
             }
             m_Wrapper.m_ClassicPlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -343,6 +368,9 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
                 @RestartLevel.started += instance.OnRestartLevel;
                 @RestartLevel.performed += instance.OnRestartLevel;
                 @RestartLevel.canceled += instance.OnRestartLevel;
+                @Shot.started += instance.OnShot;
+                @Shot.performed += instance.OnShot;
+                @Shot.canceled += instance.OnShot;
             }
         }
     }
@@ -354,5 +382,6 @@ public class @PlayerInputs : IInputActionCollection, IDisposable
         void OnInteraction(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnRestartLevel(InputAction.CallbackContext context);
+        void OnShot(InputAction.CallbackContext context);
     }
 }
