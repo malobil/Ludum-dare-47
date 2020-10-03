@@ -1420,10 +1420,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: prefabBouton
       objectReference: {fileID: 0}
-    - target: {fileID: 8837055414326185984, guid: f7ab1fb2ca29b694d960aba8846ef659, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7ab1fb2ca29b694d960aba8846ef659, type: 3}
 --- !u!1 &1109790030
