@@ -8,6 +8,9 @@ public class RailManager : MonoBehaviour
     public static RailManager Instance { get ; private set; }
     [SerializeField] private List<PathElement> m_rails = new List<PathElement>() ;
 
+    private int m_currentPathElementIdx = 0;
+    private int m_currentPointIdx = 0 ;
+
     private void Awake()
     {
         if(Instance == null)
@@ -59,5 +62,10 @@ public class RailManager : MonoBehaviour
     public List<PathElement> GetRail()
     {
         return m_rails;
+    }
+
+    public Transform GetNextPoint()
+    {
+        return m_rails[m_currentPathElementIdx].GetPathPoints()[m_currentPointIdx].transform ;
     }
 }

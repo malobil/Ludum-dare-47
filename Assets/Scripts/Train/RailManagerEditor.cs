@@ -19,6 +19,7 @@ public class RailManagerEditor : Editor
         {
             m_target.RefreshPath();
             EditorGUILayout.PropertyField(serializedObject.FindProperty("m_rails"));
+            serializedObject.ApplyModifiedProperties();
         }
 
         base.OnInspectorGUI();
