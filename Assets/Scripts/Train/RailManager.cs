@@ -28,6 +28,12 @@ public class RailManager : MonoBehaviour
 
     public void SetPath()
     {
+        if(transform.childCount <= 0)
+        {
+            Debug.LogError("C VIDE CONNARD");
+            return;
+        }
+
         foreach (Transform child in transform)
         {
             if (child.GetComponent<PathElement>())
