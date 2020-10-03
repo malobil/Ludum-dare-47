@@ -34,7 +34,7 @@ public class PathElement : MonoBehaviour
     {
         m_pathID = newID;
         
-        if(m_nextPathElement != null)
+        if(m_nextPathElement != null && m_nextPathElement.GetPathID() == -1)
         {
             int nextID = newID + 1;
             m_nextPathElement.SetPathID(nextID) ;
