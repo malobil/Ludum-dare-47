@@ -39,12 +39,12 @@ public class GameManager : MonoBehaviour
     public void LoadLevel(string levelToLoad)
     {
         SceneManager.LoadScene(levelToLoad + m_currentLevelIdx);
-        m_currentLoadLevel = levelToLoad;
+        m_currentLoadLevel = levelToLoad + m_currentLevelIdx;
     }
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(m_currentLoadLevel);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene());
     }
 
     public void ResumeGame()
