@@ -32,11 +32,13 @@ public class UiManager : MonoBehaviour
     public void RestartGame()
     {
         GameManager.Instance.RestartLevel();
+        Time.timeScale = 1f;
     }
 
     public void GoBackToTheMenu()
     {
         GameManager.Instance.RestartGame();
+        Time.timeScale = 1f;
     }
 
     public bool PauseMenuState()
@@ -54,17 +56,5 @@ public class UiManager : MonoBehaviour
         m_gameOverPoint.text = GameManager.Instance.GetCurrentPoint().ToString("");
         Time.timeScale = 0f;
         m_gameOver.SetActive(true);
-    }
-
-    public void ReplayButton()
-    {
-        GameManager.Instance.RestartLevel();
-        Time.timeScale = 1f;
-    }
-
-    public void QuitButton()
-    {
-        GameManager.Instance.RestartGame();
-        Time.timeScale = 1f;
     }
 }

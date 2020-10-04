@@ -725,7 +725,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7392611124607737036}
         m_TargetAssemblyTypeName: UiManager, Assembly-CSharp
-        m_MethodName: QuitButton
+        m_MethodName: GoBackToTheMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
