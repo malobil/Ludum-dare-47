@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
 
 [CustomEditor(typeof(RailManager))]
@@ -46,3 +48,5 @@ public class RailManagerEditor : Editor
 
 
 }
+
+#endif

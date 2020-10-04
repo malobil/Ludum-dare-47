@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+#if UNITY_EDITOR
 using UnityEditor;
 
 [CustomEditor(typeof(PathElement))]
@@ -38,3 +40,4 @@ public class PathEditor : Editor
         }
     }
 }
+#endif

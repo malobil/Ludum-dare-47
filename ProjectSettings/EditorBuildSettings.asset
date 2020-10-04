@@ -11,34 +11,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final/SceneFinal.unity
     guid: f611beb5459f77441aaf2f31608ea154
-  - enabled: 1
-    path: Assets/Scenes/Final/Scene_01.unity
-    guid: 4a9648c134d46f54aa7dbabf29794ec3
-  - enabled: 1
-    path: Assets/Scenes/Final/Scene_02.unity
-    guid: e9fa7d73f5b29dd4b98c335c8205e18e
-  - enabled: 1
-    path: Assets/Scenes/Final/Scene_03.unity
-    guid: 4f5df4c4b09f6564892e9394b43a09e2
-  - enabled: 1
-    path: Assets/Scenes/Final/Scene_04.unity
-    guid: 8e44eee6a1c44c145836956f23ba8336
-  - enabled: 1
-    path: Assets/Scenes/Final/Scene_05.unity
-    guid: 40a9bce8bdd3f594ca831e258ef84bfd
-  - enabled: 1
-    path: Assets/Scenes/Final/Scene_06.unity
-    guid: 74f5b64409cdc1e4295b47861e379c16
-  - enabled: 1
-    path: Assets/Scenes/Final/Scene_07.unity
-    guid: c71802a7b59aac2469cd888341aac23c
-  - enabled: 1
-    path: Assets/Scenes/Final/Scene_08.unity
-    guid: 3d8fdccd5f5895344b5f69fa2662dbc1
-  - enabled: 1
-    path: Assets/Scenes/Final/Scene_09.unity
-    guid: 8f91266bbaec1e546b28ab6163145b78
-  - enabled: 1
-    path: Assets/Scenes/Final/Scene_10.unity
-    guid: 65d13fcba35bef541b61481ac4aa5469
   m_configObjects: {}

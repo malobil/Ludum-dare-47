@@ -32,17 +32,17 @@ public class UiManager : MonoBehaviour
 
     public void ShowPauseMenu(bool value)
     {
-        Cursor.visible = true;
-
         if(value)
         {
             PlayerInputManager.Instance.DisableInputs();
             Time.timeScale = 0;
+            Cursor.visible = true;
         }
         else
         {
             PlayerInputManager.Instance.EnableInputs();
             Time.timeScale = 1;
+            Cursor.visible = false;
         }
         
         m_pauseMenu.SetActive(value);

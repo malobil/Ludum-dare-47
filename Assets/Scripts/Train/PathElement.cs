@@ -53,8 +53,9 @@ public class PathElement : MonoBehaviour
             int nextID = newID + 1;
             m_nextPathElement.SetPathID(nextID) ;
         }
-
+#if UNITY_EDITOR
         PrefabUtility.RecordPrefabInstancePropertyModifications(this);
+#endif
     }
 
     public int GetPathID()
