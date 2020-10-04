@@ -60,7 +60,6 @@ public class RailManager : MonoBehaviour
         m_rails.Sort((a, b) => (a.GetPathID()).CompareTo(b.GetPathID()));
 
         Debug.Log(CheckLoop());
-        
     }
 
     public List<PathElement> GetRail()
@@ -94,6 +93,7 @@ public class RailManager : MonoBehaviour
             else
             {
                 m_currentPathElementIdx = 0;
+                GameManager.Instance.AddLap();
             }
 
             m_currentPointIdx = 0;

@@ -8,8 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
+    [SerializeField] private int lapToDo = 3;
+    private int currentLap = 0;
+
     private string m_currentLoadLevel;
-    private int m_currentLevelIdx;
 
     private int m_currentPoint = 0;
 
@@ -23,19 +25,21 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+    }
 
-        m_currentLevelIdx = 1;
-        DontDestroyOnLoad(gameObject);
+    private void Start()
+    {
+        UiManager.Instance.UpdateTourCounter(currentLap, lapToDo);
     }
 
     public void QuitGame()
     {
         Application.Quit();
     }
+
     public void LoadLevel(string levelToLoad)
     {
-        SceneManager.LoadScene(levelToLoad + m_currentLevelIdx);
-        m_currentLoadLevel = levelToLoad + m_currentLevelIdx;
+        SceneManager.LoadScene(levelToLoad);
     }
 
     public void RestartLevel()
@@ -53,7 +57,6 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Scene_10"))
         {
-            m_currentLevelIdx++;
             LoadLevel(m_currentLoadLevel);
         }
         else
@@ -64,7 +67,6 @@ public class GameManager : MonoBehaviour
 
     public void RestartGame()
     {
-        m_currentLevelIdx = 1;
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -77,5 +79,25 @@ public class GameManager : MonoBehaviour
     public int GetCurrentPoint()
     {
         return m_currentPoint;
+    }
+
+    public int GetCurrentLap()
+    {
+        return currentLap;
+    }
+
+    public int GetMaxLap()
+    {
+        return lapToDo;
+    }
+
+    public void AddLap()
+    {
+        currentLap++;
+        UiManager.Instance.UpdateTourCounter(currentLap, lapToDo);
+        if (currentLap >= lapToDo)
+        {
+            UiManager.Instance.ShowGameOver();
+        }
     }
 }

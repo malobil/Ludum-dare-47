@@ -50,8 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_camera: {fileID: 2742675141226600407}
   m_body: {fileID: 2742675141078642971}
-  m_horizontalSensibility: 0.2
-  m_verticalSensibility: 0.2
+  m_horizontalSensibility: 0.5
+  m_verticalSensibility: 0.5
 --- !u!114 &2742675139517201486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,8 +107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_goldenNugget: {fileID: 3350502519294267695, guid: d585b4bd33ad7b644a5d6f1b07edcef2, type: 3}
-  m_nuggetSpeed: 15
-  m_nuggetCooldDown: 0.5
+  m_nuggetSpeed: 50
+  m_nuggetCooldDown: 0.1
   m_nuggetLifeTime: 5
   m_playerCamera: {fileID: 2742675141226600407}
   m_shotPoint: {fileID: 1653747166898711036}

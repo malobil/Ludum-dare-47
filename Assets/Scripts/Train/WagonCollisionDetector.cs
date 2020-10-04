@@ -18,7 +18,6 @@ public class WagonCollisionDetector : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        PlayerInputManager.Instance.DisableInputs();
         UiManager.Instance.ShowGameOver();
     }
 }

@@ -11,6 +11,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private GameObject m_gameOver;
     [SerializeField] private TextMeshProUGUI m_gameOverPoint;
     [SerializeField] TextMeshProUGUI m_pointText ;
+    [SerializeField] TextMeshProUGUI m_tourCounter ;
 
     private void Awake()
     {
@@ -53,8 +54,14 @@ public class UiManager : MonoBehaviour
 
     public void ShowGameOver()
     {
+        PlayerInputManager.Instance.DisableInputs();
         m_gameOverPoint.text = GameManager.Instance.GetCurrentPoint().ToString("");
         Time.timeScale = 0f;
         m_gameOver.SetActive(true);
+    }
+
+    public void UpdateTourCounter(int currentTour, int maxTour)
+    {
+        m_tourCounter.text = string.Format("Lap : {0} / {1}", currentTour, maxTour);
     }
 }
