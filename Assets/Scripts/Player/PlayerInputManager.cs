@@ -26,4 +26,9 @@ public class PlayerInputManager : MonoBehaviour
     {
         return m_inputs;
     }
+
+    private void OnDisable()
+    {
+        m_inputs.Dispose();
+    }
 }

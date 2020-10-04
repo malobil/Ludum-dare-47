@@ -8,8 +8,10 @@ public class Wagon : MonoBehaviour
 
     [SerializeField] private float m_speed = 1.2f;
     [SerializeField] private float m_distanceDectection = 0.25f;
+    [SerializeField] private bool m_canMove = true;
+
     private Rigidbody m_rbComp;
-    private bool m_canMove = true;
+   
 
     private Transform m_previousPoint;
     private Transform m_targetPoint;
