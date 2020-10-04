@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         testing?.Invoke() ;
+        
     }
 
     public void QuitGame()
@@ -44,7 +45,8 @@ public class GameManager : MonoBehaviour
 
     public void RestartLevel()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene());
+        Scene scene = SceneManager.GetActiveScene(); 
+        SceneManager.LoadScene(scene.name);
     }
 
     public void ResumeGame()

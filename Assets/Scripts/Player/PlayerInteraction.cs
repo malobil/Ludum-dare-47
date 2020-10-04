@@ -16,6 +16,7 @@ public class PlayerInteraction : MonoBehaviour
         m_playerInput = GetComponent<PlayerInputManager>().GetPlayerInput() ;
         m_playerInput.ClassicPlayer.Interaction.performed += ctx => Interact();
         m_playerInput.ClassicPlayer.Pause.performed += ctx => Pause();
+        m_playerInput.ClassicPlayer.RestartLevel.performed += ctx => Restart();
     }
 
     // Update is called once per frame

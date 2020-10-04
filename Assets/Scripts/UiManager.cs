@@ -24,6 +24,16 @@ public class UiManager : MonoBehaviour
         m_pauseMenu.SetActive(value);
     }
 
+    public void RestartGame()
+    {
+        GameManager.Instance.RestartLevel();
+    }
+
+    public void GoBackToTheMenu()
+    {
+        GameManager.Instance.RestartGame();
+    }
+
     public bool PauseMenuState()
     {
         return m_pauseMenu.active;
