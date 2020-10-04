@@ -4,6 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float m_horizontalMoveSpeed = 5f;
     [SerializeField] private float m_verticalMoveSpeed = 5f;
+    [SerializeField] private Vector3 m_wagonOffset = Vector3.zero;
 
     [SerializeField] private Transform m_body = null;
 
@@ -15,13 +16,14 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         m_playerInput = GetComponent<PlayerInputManager>().GetPlayerInput();
-        m_rbComp = GetComponent<Rigidbody>();
+       // m_rbComp = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Movemement();
+        //Movemement();
+        transform.position = Wagon.Instance.transform.position + m_wagonOffset;
     }
 
     private void Movemement()

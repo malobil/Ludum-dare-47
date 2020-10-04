@@ -64,8 +64,9 @@ public class Wagon : MonoBehaviour
 
         if(directionToLook != Vector3.zero)
         {
-            transform.rotation = Quaternion.LookRotation(directionToLook, transform.up);
-            transform.rotation *= Quaternion.Euler(0, 90f, 0);
+            
+            Quaternion targetRotation = Quaternion.LookRotation(directionToLook, transform.up) * Quaternion.Euler(0, 90f, 0) ;
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, (m_speed/0.3f)  * Time.deltaTime);
         }
         
     }
