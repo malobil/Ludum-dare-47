@@ -11,6 +11,7 @@ public class Wagon : MonoBehaviour
     private Rigidbody m_rbComp;
     private bool m_canMove = true;
 
+    private Transform m_previousPoint;
     private Transform m_targetPoint;
 
     private void Awake()
@@ -29,6 +30,7 @@ public class Wagon : MonoBehaviour
     void Start()
     {
         m_rbComp = GetComponent<Rigidbody>();
+        m_previousPoint = RailManager.Instance.GetNextPoint() ;
         transform.position = RailManager.Instance.GetNextPoint().position;
         SetNextPoint();
     }
@@ -55,10 +57,20 @@ public class Wagon : MonoBehaviour
         {
             SetNextPoint();
         }
+
+        Vector3 directionToLook = (m_previousPoint.position - m_targetPoint.position).normalized ;
+
+        if(directionToLook != Vector3.zero)
+        {
+            transform.rotation = Quaternion.LookRotation(directionToLook, transform.up);
+            transform.rotation *= Quaternion.Euler(0, 90f, 0);
+        }
+        
     }
 
     void SetNextPoint()
     {
+        m_previousPoint = m_targetPoint;
         m_targetPoint = RailManager.Instance.GetNextPoint();
         RailManager.Instance.AddIndex();
     }
