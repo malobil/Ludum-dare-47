@@ -26,7 +26,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        UiManager.Instance.UpdateTourCounter(currentLap, lapToDo);
+        if (UiManager.Instance != null)
+        {
+            UiManager.Instance.UpdateTourCounter(currentLap, lapToDo);
+        }
     }
 
     public void QuitGame()
