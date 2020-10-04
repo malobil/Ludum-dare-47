@@ -8,6 +8,7 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private List<UnityEvent> m_interactEvent = new List<UnityEvent>() ;
     [SerializeField] private Animator m_animator = null;
     [SerializeField] private string m_triggerAnimationName = string.Empty;
+    [SerializeField] private string m_boolAnimationName = string.Empty;
     [SerializeField] private bool m_interactOnShot = false;
 
     [Header("Aiguillage")]
@@ -22,7 +23,14 @@ public class InteractableObject : MonoBehaviour
         }
         if(m_animator!= null)
         {
-            m_animator.SetTrigger(m_triggerAnimationName);
+            if(m_triggerAnimationName!= null)
+            {
+                m_animator.SetTrigger(m_triggerAnimationName);
+            }
+            else if(m_boolAnimationName != null)
+            {
+                //m_animator.SetBool(m_boolAnimationName, true);
+            }
         }
     }
 
