@@ -9,6 +9,7 @@ public class UiManager : MonoBehaviour
     public static UiManager Instance { get; private set; }
     [SerializeField] GameObject m_pauseMenu;
     [SerializeField] private GameObject m_gameOver;
+    [SerializeField] private TextMeshProUGUI m_gameOverPoint;
     [SerializeField] TextMeshProUGUI m_pointText ;
 
     private void Awake()
@@ -50,7 +51,20 @@ public class UiManager : MonoBehaviour
 
     public void ShowGameOver()
     {
+        m_gameOverPoint.text = GameManager.Instance.GetCurrentPoint().ToString("");
         Time.timeScale = 0f;
         m_gameOver.SetActive(true);
+    }
+
+    public void ReplayButton()
+    {
+        GameManager.Instance.RestartLevel();
+        Time.timeScale = 1f;
+    }
+
+    public void QuitButton()
+    {
+        GameManager.Instance.RestartGame();
+        Time.timeScale = 1f;
     }
 }

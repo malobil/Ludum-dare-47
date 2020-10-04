@@ -225,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4532817762240236733, guid: 14e24a415e63aff4e929ee736cf8c1e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7703784
+      value: 1.554
       objectReference: {fileID: 0}
     - target: {fileID: 4532817762240236733, guid: 14e24a415e63aff4e929ee736cf8c1e3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -233,7 +233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4532817762240236733, guid: 14e24a415e63aff4e929ee736cf8c1e3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.481
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 4532817762240236733, guid: 14e24a415e63aff4e929ee736cf8c1e3, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1500,6 +1500,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71ebb7cdb035cc14e942cf454d2750d3, type: 3}
+--- !u!1 &1149039442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1998766418125431622, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
+  m_PrefabInstance: {fileID: 1998766418645616365}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &1149039448
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149039442}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
 --- !u!4 &1159933610 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1317491893940357713, guid: 71ebb7cdb035cc14e942cf454d2750d3, type: 3}
@@ -1739,8 +1760,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: prefabStalagtite
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 7147543770169941480, guid: b8adc2b0fb3e94c479370f42de1c7572, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b8adc2b0fb3e94c479370f42de1c7572, type: 3}
 --- !u!1001 &1258419744
 PrefabInstance:
@@ -2395,13 +2415,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1998766418152583734, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.781
+    - target: {fileID: 968755126, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5009557447986354607, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
-      propertyPath: m_speed
-      value: 3
+    - target: {fileID: 1998766417602851036, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998766417836219568, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998766417889335646, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998766418125431622, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 1998766419311038646, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5375813148464480963, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2451,13 +2487,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PrefabWagon
       objectReference: {fileID: 0}
-    - target: {fileID: 7718798458083670068, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
-      propertyPath: m_nuggetCooldDown
-      value: 0.1
+    - target: {fileID: 6992877281087864055, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7718798458083670068, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
-      propertyPath: m_nuggetSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 968755126, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 19460c82ae9176a4fbc5890f83763acc, type: 3}
