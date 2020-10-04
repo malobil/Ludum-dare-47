@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2436949294850949395}
   - component: {fileID: 3481420324558244883}
   - component: {fileID: 277556511933568134}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: prefabStalagtite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4238225937215611078}
-  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0.0000028461216}
+  m_LocalRotation: {x: 1, y: 0, z: 0, w: 0}
   m_LocalPosition: {x: 1.198084, y: 0.00000023841858, z: -1.3227603}
   m_LocalScale: {x: 0.39370102, y: 0.39370102, z: 0.39370102}
   m_Children: []
@@ -141,6 +141,5 @@ MonoBehaviour:
   m_animator: {fileID: 0}
   m_triggerAnimationName: 
   m_boolAnimationName: 
-  m_interactOnShot: 0
   m_aiguillages: []
   m_shotToDestroy: 3

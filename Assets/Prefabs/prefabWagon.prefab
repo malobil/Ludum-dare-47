@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1998766417602851039}
   - component: {fileID: 1998766417602851032}
   - component: {fileID: 1998766417602851033}
-  - component: {fileID: 1998766417602851038}
   m_Layer: 0
   m_Name: rouesArriereWagon
   m_TagString: Untagged
@@ -82,20 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1998766417602851038
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998766417602851036}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3572331074366657438, guid: 9c01e6b8fcb54274ab1192bd73651fad, type: 3}
 --- !u!1 &1998766417836219568
 GameObject:
   m_ObjectHideFlags: 0
@@ -245,7 +230,6 @@ GameObject:
   - component: {fileID: 1998766417889335641}
   - component: {fileID: 1998766417889335642}
   - component: {fileID: 1998766417889335643}
-  - component: {fileID: 1998766417889335640}
   m_Layer: 0
   m_Name: rouesAvantWagon
   m_TagString: Untagged
@@ -316,20 +300,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1998766417889335640
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1998766417889335646}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4213307021109991122, guid: 9c01e6b8fcb54274ab1192bd73651fad, type: 3}
 --- !u!1 &1998766418125431622
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +311,8 @@ GameObject:
   - component: {fileID: 1998766418125431617}
   - component: {fileID: 1998766418125431618}
   - component: {fileID: 1998766418125431619}
-  - component: {fileID: 7288496176036846092}
+  - component: {fileID: 2233040687839039278}
+  - component: {fileID: 1149039444}
   m_Layer: 0
   m_Name: prefabWagon
   m_TagString: Untagged
@@ -415,8 +386,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7288496176036846092
-MeshCollider:
+--- !u!114 &2233040687839039278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998766418125431622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f32df9f2928834b45919734de4c66ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &1149039444
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -425,10 +408,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1434604654925876401, guid: 9c01e6b8fcb54274ab1192bd73651fad, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.8376769, y: 0.47107643, z: 0.46954405}
+  m_Center: {x: 0, y: 0.11948058, z: 0.000000029802322}
 --- !u!1 &1998766419311038646
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5375813148464480963}
   - component: {fileID: 5009557447986354607}
+  - component: {fileID: 968755126}
   m_Layer: 0
   m_Name: PrefabWagon
   m_TagString: Untagged
@@ -504,6 +487,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 989eab3e0748e2142be924c872cf6319, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 1
+  m_speed: 3
   m_distanceDectection: 0.25
   m_canMove: 1
+--- !u!54 &968755126
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6992877281087864055}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

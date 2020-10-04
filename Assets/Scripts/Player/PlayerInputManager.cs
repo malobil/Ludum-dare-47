@@ -4,20 +4,30 @@ using UnityEngine;
 
 public class PlayerInputManager : MonoBehaviour
 {
+    public static PlayerInputManager Instance { get; private set; }
     private PlayerInputs m_inputs = null ;
 
     private void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+            
         m_inputs = new PlayerInputs();
         EnableInputs();
     }
 
-    private void EnableInputs()
+    public void EnableInputs()
     {
         m_inputs.Enable();
     }
 
-    private void DisableInputs()
+    public void DisableInputs()
     {
         m_inputs.Disable();
     }
