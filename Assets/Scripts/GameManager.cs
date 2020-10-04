@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    public delegate void Test() ;
-    public Test testing;
 
     private string m_currentLoadLevel;
     private int m_currentLevelIdx;
+
+    private int m_currentPoint = 0;
 
     private void Awake()
     {
@@ -26,12 +26,6 @@ public class GameManager : MonoBehaviour
 
         m_currentLevelIdx = 1;
         DontDestroyOnLoad(gameObject);
-    }
-
-    private void Update()
-    {
-        testing?.Invoke() ;
-        
     }
 
     public void QuitGame()
@@ -72,5 +66,16 @@ public class GameManager : MonoBehaviour
     {
         m_currentLevelIdx = 1;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void AddPoint(int pointToAdd)
+    {
+        m_currentPoint += pointToAdd;
+        UiManager.Instance.UpdatePoints(m_currentPoint);
+    }
+
+    public int GetCurrentPoint()
+    {
+        return m_currentPoint;
     }
 }

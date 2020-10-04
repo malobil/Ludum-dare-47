@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5300829447619320961}
   - component: {fileID: 7959165687003834443}
   - component: {fileID: 4424127337475365903}
+  - component: {fileID: 2963637887785255213}
   m_Layer: 0
   m_Name: prefabCible
   m_TagString: Untagged
@@ -96,3 +97,35 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3063589704285642510, guid: d5c08ad8764735c4ab3571ca134e550b, type: 3}
+--- !u!114 &2963637887785255213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8463494559827544478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e7635144c7b2a048913f72a8d7a3c29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_interactEvent:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2963637887785255213}
+        m_TargetAssemblyTypeName: InteractableObject, Assembly-CSharp
+        m_MethodName: AddPoint
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_animator: {fileID: 0}
+  m_triggerAnimationName: 
+  m_boolAnimationName: 
+  m_interactOnShot: 1
+  m_aiguillages: []

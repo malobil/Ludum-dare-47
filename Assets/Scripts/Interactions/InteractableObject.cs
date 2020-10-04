@@ -60,4 +60,9 @@ public class InteractableObject : MonoBehaviour
     {
         return m_interactOnShot;
     }
+
+    public void AddPoint(int pointToAdd)
+    {
+        GameManager.Instance.AddPoint(pointToAdd);
+    }
 }

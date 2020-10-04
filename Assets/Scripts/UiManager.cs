@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,7 @@ public class UiManager : MonoBehaviour
 {
     public static UiManager Instance { get; private set; }
     [SerializeField] GameObject m_pauseMenu;
+    [SerializeField] TextMeshProUGUI m_pointText ;
 
     private void Awake()
     {
@@ -19,6 +21,7 @@ public class UiManager : MonoBehaviour
             Destroy(this);
         }
     }
+
     public void ShowPauseMenu(bool value)
     {
         m_pauseMenu.SetActive(value);
@@ -37,5 +40,10 @@ public class UiManager : MonoBehaviour
     public bool PauseMenuState()
     {
         return m_pauseMenu.active;
+    }
+
+    public void UpdatePoints(int newPoints)
+    {
+        m_pointText.text = newPoints.ToString("");
     }
 }
