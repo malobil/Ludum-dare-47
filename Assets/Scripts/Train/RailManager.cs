@@ -23,6 +23,11 @@ public class RailManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        if(m_inversePath)
+        {
+            m_currentPathElementIdx = m_rails[0].GetPathPoints().Length -1 ;
+        }
     }
 
     public void RefreshPath()
@@ -74,30 +79,61 @@ public class RailManager : MonoBehaviour
 
     public void AddIndex()
     {
-        if (m_currentPointIdx < m_rails[m_currentPathElementIdx].GetPathPoints().Length - 1)
+        if(!m_inversePath)
         {
-            m_currentPointIdx++;
-        }
-        else
-        {
-
-            if(m_rails[m_currentPathElementIdx].GetNextPoint() == null)
+            if (m_currentPointIdx < m_rails[m_currentPathElementIdx].GetPathPoints().Length - 1)
             {
-                return;
-            }
-
-            if (m_currentPathElementIdx < m_rails.Count - 1)
-            {
-                m_currentPathElementIdx++;
+                m_currentPointIdx++;
             }
             else
             {
-                m_currentPathElementIdx = 0;
-                GameManager.Instance.AddLap();
-            }
 
-            m_currentPointIdx = 0;
+                if (m_rails[m_currentPathElementIdx].GetNextPoint() == null)
+                {
+                    return;
+                }
+
+                if (m_currentPathElementIdx < m_rails.Count - 1)
+                {
+                    m_currentPathElementIdx++;
+                }
+                else
+                {
+                    m_currentPathElementIdx = 0;
+                    GameManager.Instance.AddLap();
+                }
+
+                m_currentPointIdx = 0;
+            }
         }
+        else
+        {
+            if (m_currentPointIdx > 0)
+            {
+                m_currentPointIdx--;
+            }
+            else
+            {
+
+                if (m_rails[m_currentPathElementIdx].GetNextPoint() == null)
+                {
+                    return;
+                }
+
+                if (m_currentPathElementIdx < m_rails.Count - 1)
+                {
+                    m_currentPathElementIdx++;
+                }
+                else
+                {
+                    m_currentPathElementIdx = 0;
+                    GameManager.Instance.AddLap();
+                }
+
+                m_currentPointIdx = m_rails[m_currentPathElementIdx].GetPathPoints().Length - 1;
+            }
+        }
+        
       
     }
 

@@ -51,7 +51,7 @@ public class Wagon : MonoBehaviour
 
         float distance = Vector3.Distance(transform.position, m_targetPoint.position);
 
-        if (distance > m_distanceDectection)
+        if (distance - 0.1f > m_distanceDectection)
         {
             transform.position = Vector3.MoveTowards(transform.position, RailManager.Instance.GetNextPoint().position, m_speed * Time.deltaTime);
         }
@@ -64,9 +64,9 @@ public class Wagon : MonoBehaviour
 
         if(directionToLook != Vector3.zero)
         {
-            
-            Quaternion targetRotation = Quaternion.LookRotation(directionToLook, transform.up) * Quaternion.Euler(0, 90f, 0) ;
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, (m_speed/0.3f)  * Time.deltaTime);
+
+            transform.rotation = Quaternion.LookRotation(directionToLook, transform.up) * Quaternion.Euler(0, 90f, 0) ;
+            //transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, (m_speed/0.3f)  * Time.deltaTime);
         }
         
     }
