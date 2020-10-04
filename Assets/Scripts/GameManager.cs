@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         }
 
         m_currentLevelIdx = 1;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
