@@ -25,8 +25,26 @@ public class UiManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    }
+
     public void ShowPauseMenu(bool value)
     {
+        Cursor.visible = true;
+
+        if(value)
+        {
+            PlayerInputManager.Instance.DisableInputs();
+            Time.timeScale = 0;
+        }
+        else
+        {
+            PlayerInputManager.Instance.EnableInputs();
+            Time.timeScale = 1;
+        }
+        
         m_pauseMenu.SetActive(value);
     }
 
@@ -54,6 +72,7 @@ public class UiManager : MonoBehaviour
 
     public void ShowGameOver()
     {
+        Cursor.visible = true;
         PlayerInputManager.Instance.DisableInputs();
         m_gameOverPoint.text = GameManager.Instance.GetCurrentPoint().ToString("");
         Time.timeScale = 0f;
