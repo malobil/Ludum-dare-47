@@ -25,11 +25,8 @@ public class GoldenNugget : MonoBehaviour
         
         if (interactableObj != null)
         {
-            if(interactableObj.CheckOnShotInteraction())
-            {
                 interactableObj.Interact();
                 Destroy(gameObject);
-            }
         }
     }
 }

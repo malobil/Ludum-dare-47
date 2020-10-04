@@ -9,11 +9,14 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private Animator m_animator = null;
     [SerializeField] private string m_triggerAnimationName = string.Empty;
     [SerializeField] private string m_boolAnimationName = string.Empty;
-    [SerializeField] private bool m_interactOnShot = false;
 
     [Header("Aiguillage")]
     [SerializeField] private List<GameObject> m_aiguillages = new List<GameObject>();
     private int m_aiguillageIndex = 0;
+
+    [Header("Stalagmite/Stalagtite")]
+    [SerializeField] protected int m_shotToDestroy = 3 ;
+    protected int m_currentLife = 0;
 
     public virtual void Interact()
     {
@@ -56,13 +59,18 @@ public class InteractableObject : MonoBehaviour
         RailManager.Instance.RefreshPath();
     }
 
-    public bool CheckOnShotInteraction()
-    {
-        return m_interactOnShot;
-    }
-
     public void AddPoint(int pointToAdd)
     {
         GameManager.Instance.AddPoint(pointToAdd);
+    }
+
+    public void Damage()
+    {
+        m_currentLife--;
+
+        if(m_currentLife <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
