@@ -10,6 +10,10 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private string m_triggerAnimationName = string.Empty;
     [SerializeField] private bool m_interactOnShot = false;
 
+    [Header("Aiguillage")]
+    [SerializeField] private List<GameObject> m_aiguillages = new List<GameObject>();
+    private int m_aiguillageIndex = 0;
+
     public virtual void Interact()
     {
         for(int i = 0; i < m_interactEvent.Count ; i++)
@@ -25,6 +29,23 @@ public class InteractableObject : MonoBehaviour
     public void ToggleWagon()
     {
         Wagon.Instance.ToggleWagon();
+    }
+
+    public void ChangeAiguillage()
+    {
+        m_aiguillages[m_aiguillageIndex].SetActive(false);
+
+        if(m_aiguillageIndex < m_aiguillages.Count - 1)
+        {
+            m_aiguillageIndex++;
+        }
+        else
+        {
+            m_aiguillageIndex = 0;
+        }
+      
+        m_aiguillages[m_aiguillageIndex].SetActive(true);
+        RailManager.Instance.RefreshPath();
     }
 
     public bool CheckOnShotInteraction()
